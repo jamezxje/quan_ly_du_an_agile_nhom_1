@@ -4,6 +4,8 @@ import com.capstone.app.entity.Brand;
 import com.capstone.app.entity.dto.dashboard.request.BrandResponseDTO;
 import com.capstone.app.entity.dto.front.response.BrandDetailResponseDTO;
 import com.capstone.app.entity.dto.front.response.BrandItemResponseDTO;
+import org.nhom1.agilecarrentall.entity.Brand;
+import org.nhom1.agilecarrentall.entity.dto.front.response.BrandItemResponseDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
