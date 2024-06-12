@@ -1,6 +1,6 @@
 package org.nhom1.agilecarrentall.service.common;
 
-import com.capstone.app.entity.Image;
+import org.nhom1.agilecarrentall.entity.Image;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

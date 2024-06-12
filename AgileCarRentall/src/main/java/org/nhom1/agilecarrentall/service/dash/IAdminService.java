@@ -1,8 +1,8 @@
 package org.nhom1.agilecarrentall.service.dash;
 
-import com.capstone.app.entity.dto.dashboard.request.MemberRequestDTO;
-import com.capstone.app.entity.dto.dashboard.response.MemberResponseDTO;
-import com.capstone.app.entity.type.MemberRole;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.request.MemberRequestDTO;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.response.MemberResponseDTO;
+import org.nhom1.agilecarrentall.entity.type.MemberRole;
 import org.springframework.data.domain.Page;
 
 public interface IAdminService {

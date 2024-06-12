@@ -1,14 +1,14 @@
 package org.nhom1.agilecarrentall.service.dash.impl;
 
-import com.capstone.app.entity.Brand;
-import com.capstone.app.entity.Image;
-import com.capstone.app.entity.dto.dashboard.request.BrandRequestDTO;
-import com.capstone.app.entity.dto.dashboard.request.BrandResponseDTO;
-import com.capstone.app.entity.dto.front.response.BrandDetailResponseDTO;
-import com.capstone.app.entity.dto.front.response.BrandItemResponseDTO;
-import com.capstone.app.repository.BrandRepo;
-import com.capstone.app.service.common.FilesStorageService;
-import com.capstone.app.service.dash.BrandService;
+import org.nhom1.agilecarrentall.entity.Brand;
+import org.nhom1.agilecarrentall.entity.Image;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.request.BrandRequestDTO;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.request.BrandResponseDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.BrandDetailResponseDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.BrandItemResponseDTO;
+import org.nhom1.agilecarrentall.repository.BrandRepo;
+import org.nhom1.agilecarrentall.service.common.FilesStorageService;
+import org.nhom1.agilecarrentall.service.dash.BrandService;
 import lombok.RequiredArgsConstructor;
 import org.nhom1.agilecarrentall.entity.Brand;
 import org.nhom1.agilecarrentall.entity.dto.front.response.BrandItemResponseDTO;

@@ -1,15 +1,15 @@
 package org.nhom1.agilecarrentall.service.dash.impl;
 
-import com.capstone.app.config.auth.UserDetailsCustom;
-import com.capstone.app.entity.Image;
-import com.capstone.app.entity.Member;
-import com.capstone.app.entity.dto.dashboard.request.MemberRequestDTO;
-import com.capstone.app.entity.dto.dashboard.response.MemberResponseDTO;
-import com.capstone.app.entity.type.MemberRole;
-import com.capstone.app.mapper.MemberMapper;
-import com.capstone.app.repository.AdminRepo;
-import com.capstone.app.service.common.FilesStorageService;
-import com.capstone.app.service.dash.IAdminService;
+import org.nhom1.agilecarrentall.config.auth.UserDetailsCustom;
+import org.nhom1.agilecarrentall.entity.Image;
+import org.nhom1.agilecarrentall.entity.Member;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.request.MemberRequestDTO;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.response.MemberResponseDTO;
+import org.nhom1.agilecarrentall.entity.type.MemberRole;
+import org.nhom1.agilecarrentall.mapper.MemberMapper;
+import org.nhom1.agilecarrentall.repository.AdminRepo;
+import org.nhom1.agilecarrentall.service.common.FilesStorageService;
+import org.nhom1.agilecarrentall.service.dash.IAdminService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

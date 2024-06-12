@@ -1,13 +1,13 @@
 package org.nhom1.agilecarrentall.service.dash.impl;
 
-import com.capstone.app.entity.Car;
-import com.capstone.app.entity.Member;
-import com.capstone.app.entity.WishItem;
-import com.capstone.app.entity.WishItemId;
-import com.capstone.app.entity.dto.front.response.WishItemResponseDTO;
-import com.capstone.app.repository.MemberRepo;
-import com.capstone.app.repository.WishItemRepo;
-import com.capstone.app.service.dash.WishItemService;
+import org.nhom1.agilecarrentall.entity.Car;
+import org.nhom1.agilecarrentall.entity.Member;
+import org.nhom1.agilecarrentall.entity.WishItem;
+import org.nhom1.agilecarrentall.entity.WishItemId;
+import org.nhom1.agilecarrentall.entity.dto.front.response.WishItemResponseDTO;
+import org.nhom1.agilecarrentall.repository.MemberRepo;
+import org.nhom1.agilecarrentall.repository.WishItemRepo;
+import org.nhom1.agilecarrentall.service.dash.WishItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;

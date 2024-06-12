@@ -1,8 +1,8 @@
 package org.nhom1.agilecarrentall.service.dash;
 
-import com.capstone.app.entity.Car;
-import com.capstone.app.entity.WishItemId;
-import com.capstone.app.entity.dto.front.response.WishItemResponseDTO;
+import org.nhom1.agilecarrentall.entity.Car;
+import org.nhom1.agilecarrentall.entity.WishItemId;
+import org.nhom1.agilecarrentall.entity.dto.front.response.WishItemResponseDTO;
 
 import java.util.List;
 

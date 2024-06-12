@@ -1,7 +1,7 @@
 package org.nhom1.agilecarrentall.repository.specs;
 
-import com.capstone.app.entity.Booking;
-import com.capstone.app.entity.type.Status;
+import org.nhom1.agilecarrentall.entity.Booking;
+import org.nhom1.agilecarrentall.entity.type.Status;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.time.LocalDate;

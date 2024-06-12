@@ -1,9 +1,9 @@
 package org.nhom1.agilecarrentall.service.common.impl;
 
-import com.capstone.app.entity.Image;
-import com.capstone.app.entity.type.ImageType;
-import com.capstone.app.repository.ImageRepo;
-import com.capstone.app.service.common.FilesStorageService;
+import org.nhom1.agilecarrentall.entity.Image;
+import org.nhom1.agilecarrentall.entity.type.ImageType;
+import org.nhom1.agilecarrentall.repository.ImageRepo;
+import org.nhom1.agilecarrentall.service.common.FilesStorageService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

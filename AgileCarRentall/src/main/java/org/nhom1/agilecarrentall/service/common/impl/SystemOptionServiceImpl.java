@@ -1,10 +1,10 @@
 package org.nhom1.agilecarrentall.service.common.impl;
 
-import com.capstone.app.entity.SystemOption;
-import com.capstone.app.entity.dto.common.SystemOptionResponseDTO;
-import com.capstone.app.mapper.SystemOptionMapper;
-import com.capstone.app.repository.SystemOptionRepo;
-import com.capstone.app.service.common.SystemOptionService;
+import org.nhom1.agilecarrentall.entity.SystemOption;
+import org.nhom1.agilecarrentall.entity.dto.common.SystemOptionResponseDTO;
+import org.nhom1.agilecarrentall.mapper.SystemOptionMapper;
+import org.nhom1.agilecarrentall.repository.SystemOptionRepo;
+import org.nhom1.agilecarrentall.service.common.SystemOptionService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

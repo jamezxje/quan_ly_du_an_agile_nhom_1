@@ -1,12 +1,12 @@
 package org.nhom1.agilecarrentall.service.dash;
 
-import com.capstone.app.entity.Member;
-import com.capstone.app.entity.Post;
-import com.capstone.app.entity.dto.common.PostDTO;
-import com.capstone.app.entity.dto.dashboard.request.PostFilterRequest;
-import com.capstone.app.entity.dto.dashboard.request.PostRequestDTO;
-import com.capstone.app.entity.dto.pagination.PaginationResponse;
-import com.capstone.app.entity.type.PostStatus;
+import org.nhom1.agilecarrentall.entity.Member;
+import org.nhom1.agilecarrentall.entity.Post;
+import org.nhom1.agilecarrentall.entity.dto.common.PostDTO;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.request.PostFilterRequest;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.request.PostRequestDTO;
+import org.nhom1.agilecarrentall.entity.dto.pagination.PaginationResponse;
+import org.nhom1.agilecarrentall.entity.type.PostStatus;
 
 import java.util.List;
 
