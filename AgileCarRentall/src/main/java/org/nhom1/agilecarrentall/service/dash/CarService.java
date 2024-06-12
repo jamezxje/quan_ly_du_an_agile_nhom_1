@@ -1,14 +1,14 @@
 package org.nhom1.agilecarrentall.service.dash;
 
-import com.capstone.app.entity.dto.common.CarItemDTO;
-import com.capstone.app.entity.dto.dashboard.request.CarRequestDTO;
-import com.capstone.app.entity.dto.filter.CarFilterRequest;
-import com.capstone.app.entity.dto.front.response.CarItemResponseDTO;
-import com.capstone.app.entity.dto.front.response.RatingDTO;
-import com.capstone.app.entity.dto.front.response.RatingDetailResponseDTO;
-import com.capstone.app.entity.dto.pagination.PaginationRequest;
-import com.capstone.app.entity.dto.pagination.PaginationResponse;
-import com.capstone.app.entity.type.Status;
+import org.nhom1.agilecarrentall.entity.dto.common.CarItemDTO;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.request.CarRequestDTO;
+import org.nhom1.agilecarrentall.entity.dto.filter.CarFilterRequest;
+import org.nhom1.agilecarrentall.entity.dto.front.response.CarItemResponseDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.RatingDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.RatingDetailResponseDTO;
+import org.nhom1.agilecarrentall.entity.dto.pagination.PaginationRequest;
+import org.nhom1.agilecarrentall.entity.dto.pagination.PaginationResponse;
+import org.nhom1.agilecarrentall.entity.type.Status;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package org.nhom1.agilecarrentall.service.common;
 
-import com.capstone.app.entity.SystemOption;
-import com.capstone.app.entity.dto.common.SystemOptionResponseDTO;
+import org.nhom1.agilecarrentall.entity.SystemOption;
+import org.nhom1.agilecarrentall.entity.dto.common.SystemOptionResponseDTO;
 
 import java.util.List;
 

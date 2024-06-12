@@ -1,8 +1,8 @@
 package org.nhom1.agilecarrentall.repository.specs;
 
-import com.capstone.app.entity.Car;
-import com.capstone.app.entity.type.Status;
-import com.capstone.app.entity.type.TransmissionType;
+import org.nhom1.agilecarrentall.entity.Car;
+import org.nhom1.agilecarrentall.entity.type.Status;
+import org.nhom1.agilecarrentall.entity.type.TransmissionType;
 import org.springframework.data.jpa.domain.Specification;
 
 public class CarSpecification {

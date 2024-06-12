@@ -1,20 +1,9 @@
 package org.nhom1.agilecarrentall.config;
 
-import com.capstone.app.entity.SystemOption;
-import com.capstone.app.repository.*;
-import com.capstone.app.service.common.CommonDataService;
-import com.capstone.app.service.common.SystemOptionService;
-import com.capstone.app.service.front.FrontBookingService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * This class is used to initialize the database with some default data.
  */

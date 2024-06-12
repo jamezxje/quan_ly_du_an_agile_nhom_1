@@ -1,9 +1,9 @@
 package org.nhom1.agilecarrentall.repository;
 
-import com.capstone.app.entity.Post;
-import com.capstone.app.entity.dto.common.PostDTO;
-import com.capstone.app.entity.dto.dashboard.request.PostFilterRequest;
-import com.capstone.app.entity.type.PostStatus;
+import org.nhom1.agilecarrentall.entity.Post;
+import org.nhom1.agilecarrentall.entity.dto.common.PostDTO;
+import org.nhom1.agilecarrentall.entity.dto.dashboard.request.PostFilterRequest;
+import org.nhom1.agilecarrentall.entity.type.PostStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Repository
 public interface PostRepo extends JpaRepository<Post, Integer> {
-    @Query("SELECT new com.capstone.app.entity.dto.common.PostDTO(" +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.common.PostDTO(" +
             "p.postId, p.postTitle, p.postSlug,p.postContent, p.postStatus," +
             "COALESCE(pi.imageUrl, ''), p.author.fullName, p.updatedAt) " +
             "FROM Post p LEFT JOIN p.postFeaturedImage pi " +
@@ -23,14 +23,14 @@ public interface PostRepo extends JpaRepository<Post, Integer> {
             "AND (:postStatus IS NULL OR p.postStatus = :postStatus)")
     PostDTO findPostDTOByPostId(@Param("postId") Integer postId, @Param("postStatus") PostStatus postStatus);
 
-    @Query("SELECT new com.capstone.app.entity.dto.common.PostDTO(" +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.common.PostDTO(" +
             "p.postId, p.postTitle, p.postSlug,p.postContent, p.postStatus," +
             "COALESCE(pi.imageUrl, ''), p.author.fullName, p.updatedAt) " +
             "FROM Post p LEFT JOIN p.postFeaturedImage pi " +
             "WHERE p.postId = :postId")
     PostDTO findPostDTOByPostId(@Param("postId") Integer postId);
 
-    @Query("SELECT new com.capstone.app.entity.dto.common.PostDTO(p.postId, p.postTitle, p.postSlug,p.postContent, p.postStatus, " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.common.PostDTO(p.postId, p.postTitle, p.postSlug,p.postContent, p.postStatus, " +
             "COALESCE(pi.imageUrl, ''), p.author.fullName, p.updatedAt) FROM Post p LEFT JOIN p.postFeaturedImage pi " +
             "WHERE (:#{#request.postTitle} IS NULL OR p.postTitle LIKE %:#{#request.postTitle}%) " +
             "AND (:#{#request.postStatus} IS NULL OR p.postStatus = :#{#request.postStatus}) " +
@@ -39,13 +39,13 @@ public interface PostRepo extends JpaRepository<Post, Integer> {
     )
     Page<PostDTO> findByFilter(PostFilterRequest request, Pageable pageable);
 
-    @Query("SELECT new com.capstone.app.entity.dto.common.PostDTO(p.postId, p.postTitle, p.postSlug,p.postContent, p.postStatus, " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.common.PostDTO(p.postId, p.postTitle, p.postSlug,p.postContent, p.postStatus, " +
             "COALESCE(pi.imageUrl, ''), p.author.userName, p.updatedAt) " +
             "FROM Post p LEFT JOIN p.postFeaturedImage pi " +
             "WHERE p.postStatus = :postStatus")
     List<PostDTO> findLatestPosts(Pageable pageable, PostStatus postStatus);
 
-    @Query("SELECT new com.capstone.app.entity.dto.common.PostDTO(p.postId, p.postTitle, p.postSlug, p.postContent, p.postStatus, " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.common.PostDTO(p.postId, p.postTitle, p.postSlug, p.postContent, p.postStatus, " +
             "COALESCE(pi.imageUrl, ''), p.author.userName, p.updatedAt) " +
             "FROM Post p LEFT JOIN p.postFeaturedImage pi " +
             "WHERE p.postSlug = :postSlug AND p.postStatus = :postStatus")

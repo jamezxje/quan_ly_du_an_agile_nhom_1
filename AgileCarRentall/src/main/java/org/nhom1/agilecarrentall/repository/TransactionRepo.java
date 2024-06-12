@@ -1,7 +1,7 @@
 package org.nhom1.agilecarrentall.repository;
 
-import com.capstone.app.entity.Transaction;
-import com.capstone.app.entity.dto.filter.TransactionFilterRequest;
+import org.nhom1.agilecarrentall.entity.Transaction;
+import org.nhom1.agilecarrentall.entity.dto.filter.TransactionFilterRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

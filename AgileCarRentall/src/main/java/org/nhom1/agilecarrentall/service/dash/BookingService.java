@@ -1,9 +1,9 @@
 package org.nhom1.agilecarrentall.service.dash;
 
-import com.capstone.app.entity.Booking;
-import com.capstone.app.entity.dto.filter.BookingFilterRequest;
-import com.capstone.app.entity.dto.pagination.PaginationResponse;
-import com.capstone.app.entity.type.Status;
+import org.nhom1.agilecarrentall.entity.Booking;
+import org.nhom1.agilecarrentall.entity.dto.filter.BookingFilterRequest;
+import org.nhom1.agilecarrentall.entity.dto.pagination.PaginationResponse;
+import org.nhom1.agilecarrentall.entity.type.Status;
 
 import java.time.LocalDate;
 import java.util.List;

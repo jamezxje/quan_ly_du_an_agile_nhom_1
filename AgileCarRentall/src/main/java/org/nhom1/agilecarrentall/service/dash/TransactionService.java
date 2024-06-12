@@ -1,11 +1,11 @@
 package org.nhom1.agilecarrentall.service.dash;
 
-import com.capstone.app.entity.Member;
-import com.capstone.app.entity.Transaction;
-import com.capstone.app.entity.dto.filter.TransactionFilterRequest;
-import com.capstone.app.entity.dto.pagination.PaginationResponse;
-import com.capstone.app.entity.type.TransactionStatus;
-import com.capstone.app.entity.type.TransactionType;
+import org.nhom1.agilecarrentall.entity.Member;
+import org.nhom1.agilecarrentall.entity.Transaction;
+import org.nhom1.agilecarrentall.entity.dto.filter.TransactionFilterRequest;
+import org.nhom1.agilecarrentall.entity.dto.pagination.PaginationResponse;
+import org.nhom1.agilecarrentall.entity.type.TransactionStatus;
+import org.nhom1.agilecarrentall.entity.type.TransactionType;
 
 import java.util.List;
 

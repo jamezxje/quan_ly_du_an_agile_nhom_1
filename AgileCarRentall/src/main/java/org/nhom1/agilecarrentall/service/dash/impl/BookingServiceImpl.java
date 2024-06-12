@@ -1,13 +1,13 @@
 package org.nhom1.agilecarrentall.service.dash.impl;
 
-import com.capstone.app.entity.Booking;
-import com.capstone.app.entity.dto.filter.BookingFilterRequest;
-import com.capstone.app.entity.dto.pagination.PaginationResponse;
-import com.capstone.app.entity.type.PaymentMethod;
-import com.capstone.app.entity.type.Status;
-import com.capstone.app.repository.BookingRepo;
-import com.capstone.app.service.common.WalletService;
-import com.capstone.app.service.dash.BookingService;
+import org.nhom1.agilecarrentall.entity.Booking;
+import org.nhom1.agilecarrentall.entity.dto.filter.BookingFilterRequest;
+import org.nhom1.agilecarrentall.entity.dto.pagination.PaginationResponse;
+import org.nhom1.agilecarrentall.entity.type.PaymentMethod;
+import org.nhom1.agilecarrentall.entity.type.Status;
+import org.nhom1.agilecarrentall.repository.BookingRepo;
+import org.nhom1.agilecarrentall.service.common.WalletService;
+import org.nhom1.agilecarrentall.service.dash.BookingService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

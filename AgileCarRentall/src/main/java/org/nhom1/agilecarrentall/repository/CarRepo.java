@@ -1,13 +1,13 @@
 package org.nhom1.agilecarrentall.repository;
 
-import com.capstone.app.entity.Car;
-import com.capstone.app.entity.dto.common.CarItemDTO;
-import com.capstone.app.entity.dto.filter.CarFilterSearchSortDTO;
-import com.capstone.app.entity.dto.front.response.CarDetailResponseDTO;
-import com.capstone.app.entity.dto.front.response.CarItemResponseDTO;
-import com.capstone.app.entity.dto.front.response.RatingDTO;
-import com.capstone.app.entity.dto.front.response.RatingDetailResponseDTO;
-import com.capstone.app.entity.type.Status;
+import org.nhom1.agilecarrentall.entity.Car;
+import org.nhom1.agilecarrentall.entity.dto.common.CarItemDTO;
+import org.nhom1.agilecarrentall.entity.dto.filter.CarFilterSearchSortDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.CarDetailResponseDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.CarItemResponseDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.RatingDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.RatingDetailResponseDTO;
+import org.nhom1.agilecarrentall.entity.type.Status;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -21,7 +21,7 @@ import java.util.List;
 @Repository
 public interface CarRepo extends JpaRepository<Car, Integer>, JpaSpecificationExecutor<Car> {
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.CarDetailResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.CarDetailResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, " +
             "c.brand.brandId, c.brand.brandName, c.basePrice, c.carColor, c.fuelType, c.fuelConsumption, " +
             "c.numberOfSeats, c.carLicensePlate, c.productionYear, c.transmissionType, c.mileage, c.deposit, " +
             "c.address, c.description, c.additionalFunction, c.termOfUse) " +
@@ -34,10 +34,10 @@ public interface CarRepo extends JpaRepository<Car, Integer>, JpaSpecificationEx
             "FROM car AS c WHERE c.car_id = :carId")
     RatingDTO findTotalRatingAndAvgRatingByCarId(@Param("carId") Integer carId);
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.CarItemResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats) FROM Car c JOIN c.owner WHERE c.owner.isActive = true AND c.owner.isVerified = true AND c.status = :Status")
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.CarItemResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats) FROM Car c JOIN c.owner WHERE c.owner.isActive = true AND c.owner.isVerified = true AND c.status = :Status")
     List<CarItemResponseDTO> findAllApprovedCarByAvailableOwner(@Param("Status") Status Status);
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.CarItemResponseDTO( " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.CarItemResponseDTO( " +
             "c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, " +
             "c.carColor, c.fuelConsumption, c.numberOfSeats) " +
             "FROM Car c JOIN c.owner " +
@@ -45,7 +45,7 @@ public interface CarRepo extends JpaRepository<Car, Integer>, JpaSpecificationEx
             "AND c.carId = :carId AND c.owner.memberId = :memberId")
     CarItemResponseDTO findCarItemByMemberIdAndCarId(@Param("memberId") Integer memberId, @Param("carId") Integer carId);
 
-    @Query("SELECT new com.capstone.app.entity.dto.common.CarItemDTO(c.carId,c.carModel,c.brand.brandName,c.featureImage.imageUrl,c.carLicensePlate,c.owner.fullName,c.status,c.productionYear,c.basePrice) FROM Car c " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.common.CarItemDTO(c.carId,c.carModel,c.brand.brandName,c.featureImage.imageUrl,c.carLicensePlate,c.owner.fullName,c.status,c.productionYear,c.basePrice) FROM Car c " +
             "WHERE (:carModel is null or lower(c.carModel) like lower(concat('%', :carModel,'%'))) " +
             "AND (:brandId is null or c.brand.brandId = :brandId) " +
             "AND (:ownerId is null or c.owner.memberId = :ownerId) " +
@@ -61,7 +61,7 @@ public interface CarRepo extends JpaRepository<Car, Integer>, JpaSpecificationEx
             "AND (:brandId is null OR c.brand.brandId = :brandId)")
     Page<Car> findApprovedCarByBrandAndOwnerStatus(@Param("status") Status status, @Param("brandId") Integer brandId, Pageable pageable);
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.CarItemResponseDTO( c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats ) FROM Car c " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.CarItemResponseDTO( c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats ) FROM Car c " +
             "JOIN c.owner o " +
             "WHERE o.isActive = true " +
             "AND o.isVerified = true " +
@@ -69,7 +69,7 @@ public interface CarRepo extends JpaRepository<Car, Integer>, JpaSpecificationEx
             "AND (:brandId is null OR c.brand.brandId = :brandId)")
     Page<CarItemResponseDTO> findApprovedCarItemByBrandAndOwnerStatus(@Param("status") Status status, @Param("brandId") Integer brandId, Pageable pageable);
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.CarItemResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats), COUNT(b) AS bookingCount " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.CarItemResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats), COUNT(b) AS bookingCount " +
             "FROM Car c " +
             "LEFT JOIN Booking b ON c = b.car " +
             "WHERE c.owner.isActive = true " +
@@ -82,7 +82,7 @@ public interface CarRepo extends JpaRepository<Car, Integer>, JpaSpecificationEx
     @Query("SELECT c.numberOfSeats FROM Car c GROUP BY c.numberOfSeats")
     List<Integer> findAllNumberOfSeats();
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.CarItemResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats) FROM Car c " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.CarItemResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats) FROM Car c " +
             "WHERE (:#{#request.keyword} is null or lower(c.carModel) like lower(concat('%', :#{#request.keyword},'%'))) " +
             "AND (:#{#request.brandId} is null or c.brand.brandId = :#{#request.brandId}) " +
             "AND (:#{#request.minPrice} is null or c.basePrice >= :#{#request.minPrice}) " +
@@ -91,7 +91,7 @@ public interface CarRepo extends JpaRepository<Car, Integer>, JpaSpecificationEx
             "AND (:#{#request.numberOfSeats} is null or c.numberOfSeats = :#{#request.numberOfSeats})")
     Page<CarItemResponseDTO> findCarResponseDTOByFilter(CarFilterSearchSortDTO request, Pageable pageable);
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.CarItemResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats) FROM Car c " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.CarItemResponseDTO(c.carId, c.carModel, c.featureImage.imageUrl, c.basePrice, c.carColor, c.fuelConsumption, c.numberOfSeats) FROM Car c " +
             "INNER JOIN Brand b ON c.brand.brandId = b.brandId " +
             "JOIN c.owner o " +
             "WHERE o.isActive = true " +
@@ -101,7 +101,7 @@ public interface CarRepo extends JpaRepository<Car, Integer>, JpaSpecificationEx
             "AND c.status = :status")
     Page<CarItemResponseDTO> findRelatedCar(@Param("brandId") Integer brandId, @Param("carId") Integer carId, @Param("status") Status status, Pageable pageable);
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.RatingDetailResponseDTO( " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.RatingDetailResponseDTO( " +
             "b.feedback.feedbackId, b.feedback.feedbackContent, b.feedback.feedbackPoint, b.feedback.feedbackDate, b.member.userName) " +
             "FROM Booking b " +
             "WHERE b.car.carId = :carId " +

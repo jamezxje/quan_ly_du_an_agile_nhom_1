@@ -1,7 +1,7 @@
 package org.nhom1.agilecarrentall.repository;
 
-import com.capstone.app.entity.Member;
-import com.capstone.app.entity.type.MemberRole;
+import org.nhom1.agilecarrentall.entity.Member;
+import org.nhom1.agilecarrentall.entity.type.MemberRole;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

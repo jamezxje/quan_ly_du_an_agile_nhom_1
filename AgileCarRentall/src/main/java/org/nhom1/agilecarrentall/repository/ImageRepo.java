@@ -1,6 +1,6 @@
 package org.nhom1.agilecarrentall.repository;
 
-import com.capstone.app.entity.Image;
+import org.nhom1.agilecarrentall.entity.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

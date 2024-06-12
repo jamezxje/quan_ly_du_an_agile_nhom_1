@@ -1,11 +1,11 @@
 package org.nhom1.agilecarrentall.repository;
 
-import com.capstone.app.entity.Booking;
-import com.capstone.app.entity.dto.filter.BookingFilterRequest;
-import com.capstone.app.entity.dto.filter.FilterSortDTO;
-import com.capstone.app.entity.dto.front.response.BookingDetailResponseDTO;
-import com.capstone.app.entity.dto.front.response.BookingItemResponseDTO;
-import com.capstone.app.entity.type.Status;
+import org.nhom1.agilecarrentall.entity.Booking;
+import org.nhom1.agilecarrentall.entity.dto.filter.BookingFilterRequest;
+import org.nhom1.agilecarrentall.entity.dto.filter.FilterSortDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.BookingDetailResponseDTO;
+import org.nhom1.agilecarrentall.entity.dto.front.response.BookingItemResponseDTO;
+import org.nhom1.agilecarrentall.entity.type.Status;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -57,13 +57,13 @@ public interface BookingRepo extends JpaRepository<Booking, Integer>, JpaSpecifi
 
 
     @Query("SELECT b FROM Booking b WHERE b.car.carId = :#{#booking.car.carId} AND " +
-            "b.status = com.capstone.app.entity.type.Status.PENDING AND " +
+            "b.status = org.nhom1.agilecarrentall.entity.type.Status.PENDING AND " +
             "b.bookingId != :#{#booking.bookingId} AND " +
             "((:#{#booking.bookingPickupTime} >= b.bookingPickupTime AND :#{#booking.bookingPickupTime} <= b.bookingReturnTime) OR " +
             "(:#{#booking.bookingReturnTime} >=  b.bookingPickupTime AND :#{#booking.bookingReturnTime} <= b.bookingReturnTime))")
     List<Booking> findCarBookingInTime(Booking booking);
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.BookingDetailResponseDTO(" +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.BookingDetailResponseDTO(" +
             "b.bookingId, i.imageUrl, " +
             "b.carModel, c.deposit, c.basePrice, " +
             "b.bookingPickupTime, b.bookingReturnTime, b.bookingActualReturnTime, " +
@@ -100,7 +100,7 @@ public interface BookingRepo extends JpaRepository<Booking, Integer>, JpaSpecifi
 
     Booking findBookingByMember_MemberIdAndBookingId(Integer memberId, Integer bookingId);
 
-    @Query("SELECT new com.capstone.app.entity.dto.front.response.BookingItemResponseDTO(b.bookingId, b.carModel, i.imageUrl, b.bookingPickupTime, b.bookingReturnTime, b.totalPrice, b.status) " +
+    @Query("SELECT new org.nhom1.agilecarrentall.entity.dto.front.response.BookingItemResponseDTO(b.bookingId, b.carModel, i.imageUrl, b.bookingPickupTime, b.bookingReturnTime, b.totalPrice, b.status) " +
             "FROM Booking b JOIN b.member m " +
             "JOIN b.car.featureImage i " +
             "WHERE m.memberId IS NULL OR m.memberId = :memberId " +
